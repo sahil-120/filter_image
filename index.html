@@ -1,0 +1,125 @@
+<style>
+    #portfolio{
+	width:1000px;
+	margin:0px auto;
+}
+#portfolio #menu{
+	text-align:center;
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+
+#portfolio #menu li{
+	display: inline-block;
+}
+#portfolio #menu li a{
+	display: inline-block;
+	padding:4px 20px;
+	border: 1px solid #333;
+	text-decoration:none;
+}
+#portfolio #menu li .active{
+	background:green;
+	color:#fff;
+}
+
+#items {
+	text-align:center;
+	margin-top:40px;
+}
+#items .single-item{
+	display:inline-block;
+	margin-top:2px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<section id="portfolio">
+	<center>
+	<h1>Jquery portfolio filter.</h1>
+</center>
+	<ul id="menu">
+		<li><a data-target="all" class="active" href="#">All</a></li>
+		<li><a data-target="html" href="#">HTML</a></li>
+		<li><a data-target="css" href="#">CSS</a></li>
+		<li><a data-target="javascript" href="#">Javascript</a></li>
+		<li><a data-target="php" href="#">PHP</a></li>
+		<li><a target="_blank" href="https://insidethediv.com/jquery-portfolio-filter">More</a></li>
+	</ul>
+	
+	<div id="items">
+		<div class="single-item html css">
+			<img src="https://via.placeholder.com/245x200.png?text=HTML" alt="HTML Item">
+		</div>
+		<div class="single-item javascript">
+			<img src="https://via.placeholder.com/245x200.png?text=JS" alt="JS Item">
+		</div>
+		<div class="single-item css">
+			<img src="https://via.placeholder.com/245x200.png?text=CSS" alt="CSS Item">
+		</div>
+		<div class="single-item html">
+			<img src="https://via.placeholder.com/245x200.png?text=HTML" alt="HTML Item">
+		</div>
+		<div class="single-item css">
+			<img src="https://via.placeholder.com/245x200.png?text=CSS" alt="CSS Item">
+		</div>
+		<div class="single-item javascript">
+			<img src="https://via.placeholder.com/245x200.png?text=JS" alt="JS Item">
+		</div>
+		<div class="single-item php">
+			<img src="https://via.placeholder.com/245x200.png?text=PHP" alt="PHP Item">
+		</div>
+		<div class="single-item html">
+			<img src="https://via.placeholder.com/245x200.png?text=HTML" alt="HTML Item">
+		</div>
+		
+			<div class="single-item css">
+			<img src="https://via.placeholder.com/245x200.png?text=CSS" alt="CSS Item">
+		</div>
+		<div class="single-item html">
+			<img src="https://via.placeholder.com/245x200.png?text=HTML" alt="HTML Item">
+		</div>
+		<div class="single-item php">
+			<img src="https://via.placeholder.com/245x200.png?text=PHP" alt="PHP Item">
+		</div>
+		<div class="single-item javascript">
+			<img src="https://via.placeholder.com/245x200.png?text=JS" alt="JS Item">
+		</div>
+	</div>
+	
+	
+
+</section>
+
+
+     <script>
+         // use jquery cdn
+
+
+$(document).ready(function(){
+	
+	$("#menu li a").click(function(){
+		
+		// add and remove active class on menu button
+			$("#menu li a").removeClass('active');
+		  $(this).addClass('active');
+		// end
+		
+		var targeted_item = $(this).data('target');
+		
+		if(targeted_item === "all"){
+			$(".single-item").fadeIn(); // show all
+		}else{
+			$(".single-item").hide(); // hide all
+		  $("."+targeted_item).fadeIn(); // show clicked item
+		}
+		
+		
+		
+	})
+	
+	
+	
+	
+})
+     </script>
